@@ -1,0 +1,119 @@
+.scrollbar {
+    background-image: none;
+    border-style: solid;
+    -GtkRange-trough-border: 0;
+    -GtkRange-arrow-scaling: 0.444;
+    -GtkRange-slider-width: 15;
+    -GtkRange-stepper-size: 15; /* Steppers is out */
+    -GtkScrollbar-min-slider-length: 35; /* minimum size for the slider */
+
+    -GtkRange-stepper-spacing: 1;
+    -GtkRange-trough-under-steppers: 0; /* 0 - Steppers out of trough, 1 - inside */
+}
+
+/**************************************************
+ 		Vertical scrollbars
+**************************************************/
+
+.scrollbar.trough.vertical {
+    background-color: #dddddd;
+
+    border-width: 1;
+
+    -adwaita-border-gradient: -gtk-gradient (linear,
+                   		left top, left bottom,
+                   		from (shade (#959596, 1.04)),
+                   		to (shade (#959596, 1.15)));
+    border-radius: 0;
+}
+
+.scrollbar.slider.vertical,
+.scrollbar.button.vertical {
+    background-image: -gtk-gradient (linear,
+						left top, right top,
+						from (#fefefe),
+						to (#eeeeee));
+
+    border-color: shade (#959596, 0.94);
+    border-radius: 0;
+    border-width: 1;
+}
+
+.scrollbar.slider.vertical:prelight {
+    background-image: -gtk-gradient (linear,
+                   left top, right top,
+                   from (#fefefe),
+                   to (#f2f2f2));
+
+    border-color: shade (#959596, 0.9);
+}
+
+.scrollbar.slider.vertical:prelight:active {
+    background-image:-gtk-gradient (linear,
+                   left top, right top,
+                   from (shade (#dbdbdc, 1.10)),
+                   to (shade (#dbdbdc, 0.95)));
+    border-color: shade (#959596, 0.94);
+}
+
+.scrollbar.slider.vertical:insensitive {
+    background-color: @theme_base_color;
+}
+
+.scrollbar.trough.vertical:insensitive {
+    background-color: shade (@theme_bg_color, 0.882);
+}
+
+/**************************************************
+ 		Horizontal scrollbars
+**************************************************/
+
+.scrollbar.trough.horizontal {
+    background-image:-gtk-gradient (linear,
+                   		left top, left bottom,
+                   		from (shade (#959596, 1.25)),
+                   		to (shade (#959596, 1.45)));
+    border-width: 1;
+
+    -adwaita-border-gradient: -gtk-gradient (linear,
+                   		left top, right top,
+                   		from (shade (#959596, 1.04)),
+                   		to (shade (#959596, 1.15)));
+    border-radius: 0;
+}
+
+.scrollbar.slider.horizontal,
+.scrollbar.button.horizontal {
+    background-image: -gtk-gradient (linear,
+                   left top, right top,
+                   from (shade (#dbdbdc, 0.95)),
+                   to (shade (#dbdbdc, 1.10)));
+    border-color: shade (#959596, 0.94);
+    border-radius: 0;
+    border-width: 1;
+}
+
+.scrollbar.slider.horizontal:prelight {
+    background-image: -gtk-gradient (linear,
+                   left bottom, right top,
+                   from (#dae0d4),
+                   to (#c6cbc1));
+    border-color: shade (#959596, 0.9);
+}
+
+.scrollbar.slider.horizontal:prelight:active {
+     background-image:-gtk-gradient (linear,
+                   left bottom, right top,
+                   from (shade (#dbdbdc, 0.95)),
+                   to (shade (#dbdbdc, 1.10)));
+    border-color: shade (#959596, 0.94);
+}
+
+.scrollbar.slider.horizontal:insensitive {
+    background-color: @theme_base_color;
+}
+
+.scrollbar.trough.horizontal:insensitive {
+    background-color: shade (@theme_bg_color, 0.882);
+}
+

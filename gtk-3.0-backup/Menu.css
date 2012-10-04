@@ -1,0 +1,106 @@
+/*********
+ * Menus *
+ *********/
+
+.menubar {
+    background-color: #e5e5e5;
+    border-width: 0;
+    border-style: none;
+    padding: 2; /* Menubar height */
+    color: @theme_text_color; /* Menubar text color */
+
+    -GtkWidget-window-dragging: false;
+    -GtkMenuBar-internal-padding: 0;
+}
+
+.menubar.menuitem:prelight {
+    background-color: shade (#97BF60, 1.1); /*  Menubar item pressed color */
+    color: shade (#ffffff, 1.1); /*@theme_text_color; Menubar item pressed text color */
+
+    border-style: solid;
+    border-radius: 2; /* roundness */
+    border-width: 1;
+    border-color: shade (#f0f0f1, 0.65); /*  @inactive_frame_color;*/
+}
+
+.menubar.menuitem {
+    border-width: 1;
+    border-style: none;
+}
+
+.menu {
+    padding: 1;
+
+    background-color: #e5e5e5; /* Menu body color */
+
+    border-style: solid;
+    border-width: 1;
+    border-radius: 0;
+    border-color: @inactive_frame_color;
+    -GtkMenuItem-arrow-scaling: 0.4;
+}
+
+/* These are menuitem shortcut text colors */
+.menuitem {
+    -adwaita-menuitem-arrow-color: @menu_controls_color;
+}
+
+.menuitem.accelerator {
+    color: alpha (@theme_text_color, 0.66);
+}
+
+.menuitem.accelerator:prelight,
+.menuitem.accelerator:active {
+    color: @theme_selected_fg_color;
+}
+
+.menuitem:active,
+.menuitem:prelight {
+    background-image:-gtk-gradient (linear,
+                   left top, left bottom,
+                   from (shade (#97BF60, 1.6)),
+		   color-stop (0.04, shade (#97BF60, 1.2)),
+		   color-stop (0.45, #97BF60),
+                   to (shade (#97BF60, 0.9)));
+    color: @theme_selected_fg_color; /* Menu item prelight text color */
+    border-style: solid;
+    border-width: 1;
+    border-radius: 2; /* roundness */
+    -adwaita-border-gradient: -gtk-gradient (linear,
+                   left top, left bottom,
+                   from (shade (#97BF60, 1.0)),
+                   to (shade (#97BF60, 0.74)));
+
+
+}
+
+.menu.separator {/*
+    border-color: @inactive_frame_color;*/
+    -GtkWidget-wide-separators: 1;
+    -GtkSeparatorMenuItem-horizontal-padding: 1;
+    -GtkWidget-separator-height: 1;
+    -adwaita-border-gradient: -gtk-gradient (linear,
+                   left top, right top,
+                   from (shade (#aeaeae, 1.4)),
+		   color-stop (0.45, #aeaeae),
+                   to (shade (#aeaeae, 1.4)));
+
+}
+
+/* menu radio and check items are drawn differently */
+.menu.check:active {
+    color: @menu_controls_color;
+}
+
+.menu.radio:active {
+    color: @menu_controls_color;
+}
+
+.menu.check:prelight {
+    color: @theme_selected_fg_color;
+}
+
+.menu.radio:prelight {
+    color: @theme_selected_fg_color;
+}
+

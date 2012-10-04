@@ -1,0 +1,61 @@
+/**************************************************************
+			Notebooks/Tabs
+ *************************************************************/
+
+.notebook {
+    padding: 2;
+
+    border-color: @notebook_border;
+    border-style: solid;
+    border-width: 1;
+    border-radius: 4;
+
+    background-color: #d8d8d8;
+
+    -GtkNotebook-tab-overlap: 0; /* Approaching or going away - between tabs each other */
+    -GtkNotebook-tab-curvature: 2; /* Tabs inclination - this value must be at least 2, becouse inclination of tabs have tendency to go on ...  */
+
+}
+
+.notebook tab {
+    padding: 0;
+    border-radius: 0; /* Close button mouse over */
+    background-image: -gtk-gradient (linear,
+                                             left top, left bottom,
+                                             from (#EEEEEE),
+                                             to (#d8d8d8));
+
+/*    transition: 80ms linear; This makes glowing close button, but theme is slower */
+}
+
+.notebook tab:active {
+    border-width: 1;
+    border-radius: 0;/* Close button down */
+    -adwaita-border-gradient: -gtk-gradient (linear,
+                                             left top, left bottom,
+                                             from (shade (@notebook_border, 1.0)),
+                                             to (@notebook_border));/* Tab border color */
+
+    -adwaita-selected-tab-color: #97BF60;
+    background-color: #eeeeee;
+    background-image: none;
+}
+
+.notebook tab .button,
+.notebook tab .button:hover{
+    background-image: -gtk-gradient (linear,
+                   left top, right bottom,
+                   from (shade (@bg_color, 0.95)),
+                   to (shade (@bg_color, 1.15)));
+    border-color: shade (@bg_color, 0.80);
+}
+
+.notebook tab .button,
+.notebook tab .button:hover:active {
+    background-image: -gtk-gradient (linear,
+                   left top, right bottom,
+                   from (shade (@bg_color, 0.80)),
+                   to (shade (@bg_color, 0.99)));
+    border-color: shade (@bg_color, 0.80);
+}
+

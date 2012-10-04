@@ -1,0 +1,88 @@
+/****************************************************
+ 		Check and Radio items
+****************************************************/
+
+.check,
+.check row:selected,
+.check row:selected:focused {
+    background-image: url("Radiocheck/unchecked.png");
+}
+
+.check:prelight,
+.check row:selected:prelight,
+.check row:selected:focused:prelight {
+    background-image: url("Radiocheck/unchecked_shadow.png");
+}
+
+.check:insensitive,
+.check row:selected:insensitive,
+.check row:selected:focused:insensitive {
+    background-image: url("Radiocheck/unchecked.png");
+}
+
+.check:active,
+.check row:selected:active,
+.check row:selected:focused:active {
+    background-image: url("Radiocheck/checked.png");
+}
+
+.check:active:prelight,
+.check row:selected:active:prelight,
+.check row:selected:focused:active:prelight {
+    background-image: url("Radiocheck/checked_over.png");
+}
+
+.check:active:insensitive,
+.check row:selected:active:insensitive,
+.check row:selected:focused:active:insensitive {
+    background-image: url("Radiocheck/checked_insensitive.png");
+}
+
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent {
+    background-image: url("Radiocheck/checked_inconsistent.png");
+}
+
+.radio,
+.radio row:selected,
+.radio row:selected:focused {
+    background-image: url("Radiocheck/unchecked.png");
+}
+
+.radio:prelight,
+.radio row:selected:prelight,
+.radio row:selected:focused:prelight {
+    background-image: url("Radiocheck/unchecked_shadow.png");
+}
+
+.radio:insensitive,
+.radio row:selected:insensitive,
+.radio row:selected:focused:insensitive {
+    background-image: url("Radiocheck/unchecked.png");
+}
+
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focused:active {
+    background-image: url("Radiocheck/radio_checked.png");
+}
+
+.radio:active:prelight,
+.radio row:selected:active:prelight,
+.radio row:selected:focused:active:prelight {
+    background-image: url("Radiocheck/radio_checked_over.png");
+}
+
+.radio:active:insensitive,
+.radio row:selected:active:insensitive,
+.radio row:selected:focused:active:insensitive {
+    background-image: url("Radiocheck/radio_checked_insensitive.png");
+}
+
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent {
+    background-image: url("Radiocheck/checked_inconsistent.png");
+}
+

@@ -1,0 +1,47 @@
+/*******************************************************************
+ 			 GtkSwitch controls
+ ******************************************************************/
+
+GtkSwitch {
+    font: condensed 8;
+}
+
+GtkSwitch.trough {
+    color: #ffffff; /*@theme_base_color; @internal_element_color;*/
+    border-radius: 0;
+    border-width: 0;
+    border-style: none;/*solid;*/
+    border-color: shade (@frame_color, 1.22);
+    background-image: url("GtkSwitch/toggle.png");
+}
+
+GtkSwitch.trough:active {
+    color: #ffffff; /*@theme_base_color;*/
+    background-image: url("GtkSwitch/toggle.png");
+}
+
+GtkSwitch.trough:insensitive { /* Switch is not active */
+    color: @theme_base_color;
+    background-image:url("GtkSwitch/togglei.png");
+}
+
+GtkSwitch.slider {
+    border-width: 0;
+    border-radius: 0;
+    border-color: shade (@frame_color, 1.31);
+    border-style: none;
+    padding: 2;
+    background-image: url("GtkSwitch/switch_slider.png");
+
+    -adwaita-switch-grip-color: alpha (shade (@switch_slider_color, 0.97), 0.0);
+}
+
+GtkSwitch.slider:active {
+    background-image: url("GtkSwitch/switch_slider.png");
+}
+
+GtkSwitch.slider:insensitive {
+    border-style: none;
+    background-image: url("GtkSwitch/switch_slider_insensitive.png");
+}
+
