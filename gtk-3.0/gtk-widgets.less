@@ -1,0 +1,133 @@
+@base_color: #fff;
+@text_color: #1a1a1a;
+@bg_color:   #d5dad5;
+@fg_color:   #101010;
+@tooltip_fg_color: #000;
+@tooltip_bg_color: #fff;
+@selected_bg_color: #97bf60;
+@selected_fg_color: #fff;
+@insensitive_bg_color: #f4f4f2;
+@insensitive_fg_color: #a7aba7;
+@insensitive_border_color: #444;
+@active_fg_color: #111;
+@border_color: #666;
+@grip_color: #888;
+
+* {
+    engine: adwaita;
+    padding: 1px;
+
+    // Style properties
+    /*-GtkToolButton-icon-spacing: 4;
+
+    -GtkTextView-error-underline-color: @error_color;
+
+    -GtkPaned-handle-size: 5;
+
+    -GtkCheckButton-indicator-size: 16px;
+    -GtkCheckMenuItem-indicator-size: 18px;*/
+
+    // The size for scrollbars. The slider is 2px smaller, but we keep it
+    // up so that the whole area is sensitive to button presses for the
+    // slider. The stepper button is larger in both directions, the slider
+    // only in the width
+
+    /*-GtkScrolledWindow-scrollbar-spacing: 0;
+    -GtkScrolledWindow-scrollbars-within-bevel: 1;
+
+    -GtkToolItemGroup-expander-size: 11;
+    -GtkExpander-expander-size: 11;
+
+    -GtkMenu-horizontal-padding: 0;
+    -GtkMenu-vertical-padding: 0;
+
+    -GtkWidget-link-color: @link_color;
+    -GtkWidget-visited-link-color: @link_color;
+    -GtkIMHtml-hyperlink-color: @link_color;
+    -GtkHTML-link-color: @link_color;
+
+    -WnckTasklist-fade-overlay-rect: 0;
+
+    -GtkWidget-focus-padding: 2;
+    -GtkWidget-focus-line-width: 1;
+    -adwaita-focus-border-color: alpha(@theme_text_color, 0.4);
+    -adwaita-focus-border-radius: 2;
+    -adwaita-focus-fill-color: alpha(@theme_base_color, 0.0);
+    -adwaita-focus-border-gradient: none;
+    -adwaita-focus-border-dashes: 1;*/
+
+    &:hover {
+        background-color: #f1f1f1;
+    }
+
+    &:selected {
+        background-color: @selected_bg_color;
+        color: @selected_fg_color;
+    }
+
+    &:insensitive {
+        background-color: @insensitive_bg_color;
+        color: @insensitive_fg_color;
+        border-color: @insensitive_border_color;
+    }
+
+    &:active {
+        color: @active_fg_color;
+    }
+}
+
+GtkWindow {
+    color: @fg_color;
+    background-color: @bg_color;
+}
+
+.tooltip {
+    padding: 4px 4px;
+    border-style: none;
+    background-color: @tooltip_bg_color;
+    color: @tooltip_fg_color;
+    border-color: @border_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+.grip {
+    background-color: @grip_color;
+}
+
+.rubberband {
+    background-color: fade(@selected_bg_color, 0.35);
+
+    border-color: @selected_bg_color;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+}
+
+.separator {
+    color: #888;
+    background-color: #999;
+}
+
+.pane-separator {
+    color: #888;
+    background-color: @bg_color;
+
+    &:prelight, &:selected {
+        color: #5e7f3e;
+    }
+}
+
+GtkStatusbar {
+    padding: 5px;
+    color: @fg_color;
+    /*-GtkStatusbar-shadow-type: none;*/
+}
+
+.dnd {
+    border-width: 1px;
+    border-style: solid;
+    border-color: @selected_bg_color;
+    border-radius: 2px;
+}
