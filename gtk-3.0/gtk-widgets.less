@@ -6,7 +6,7 @@
 @tooltip_bg_color: #fff;
 @selected_bg_color: #97bf60;
 @selected_fg_color: #fff;
-@insensitive_bg_color: #f4f4f2;
+@insensitive_bg_color: fade(#f4f4f2, 30%);
 @insensitive_fg_color: #444;
 @insensitive_border_color: #444;
 @active_fg_color: #111;
@@ -23,7 +23,7 @@
 @button_gradient_color_b: #d7dad7;
 @button_border:           #a7aba7;
 
-@button_active_gradient_color_a: #a2a9a2;
+@button_active_gradient_color_a: @selected_bg_color;
 @button_active_gradient_color_b: lighten(@button_active_gradient_color_a, 0.06);
 @button_hover_gradient_color_a: @base_color;
 @button_hover_gradient_color_b: lighten(@button_hover_gradient_color_a, 0.06);
@@ -275,12 +275,15 @@ GtkComboBox.combobox-entry .button:prelight,
 
 .spinbutton {
 
-    .button {
-        background-image: none;
-        background-color: transparent;
+    &.button {
 
-        border-style: none;
-        border-image: none;
+        &, &:prelight, &:active, &:focused, &:insensitive {
+            background-image: none;
+            background-color: transparent;
+
+            border-style: none;
+            border-image: none;
+        }
 
         color: @internal_element_color;
 
@@ -293,7 +296,7 @@ GtkComboBox.combobox-entry .button:prelight,
         }
     }
 
-    .entry {
+    &.entry {
         padding: 0px 6px 0px 1px;
     }
 }
@@ -302,8 +305,8 @@ GtkComboBox.combobox-entry .button:prelight,
     .gtk_generic_gradient_2_stop(-adwaita-progressbar-pattern,
                                   fade(@progressbar_pattern, 0),
                                   0.49, fade(@progressbar_pattern, 0),
-                                  0.5, fade(@progressbar_pattern, 0.10),
-                                  fade(@progressbar_pattern, 0.1),
+                                  0.5, fade(@progressbar_pattern, 10%),
+                                  fade(@progressbar_pattern, 10%),
                                   @end, @begin);
 }
 
@@ -434,11 +437,6 @@ GtkScrolledWindow.frame {
 
     &:hover {
         .gtk_gradient(darken(#fbfbfb, 10%), darken(#c5c5c9, 10%));
-
-        &:focused {
-            .adwaita_gradient(#a0a898, #878f7f);
-            .gtk_gradient(#d2dbc6, #aab99a);
-        }
     }
 
     &:focused {
@@ -447,17 +445,28 @@ GtkScrolledWindow.frame {
         border-width: 1px;
         .adwaita_gradient(#a4aa9e, #8a9184);
         .gtk_gradient(#dce3d4, #b2bca7);
-
-        &:active, &:active:hover {
-            .adwaita_gradient(#858c7f, #9ca396);
-            .gtk_gradient(#b9c2b1, #a1ab97);
-        }
     }
 
     &:insensitive {
         background-image: none;
         background-color: @insensitive_bg_color;
         color: @insensitive_fg_color;
+    }
+
+    &:active {
+        &, &:focused {
+            .gtk_gradient(@menu_prelight_top, @menu_prelight_bottom);
+        }
+
+        &:hover {
+            .gtk_gradient(lighten(@menu_prelight_top, 10%),
+                          lighten(@menu_prelight_bottom, 10%));
+        }
+
+        &:insensitive {
+            .gtk_gradient(lighten(@menu_prelight_top, 25%),
+                          lighten(@menu_prelight_bottom, 25%));
+        }
     }
 
     &.default {
@@ -549,13 +558,6 @@ GtkComboBox {
         border-width: 1px;
         border-color: #aaa;
         border-style: solid;
-        .gtk_gradient(@button_active_gradient_color_a,
-                      @button_active_gradient_color_b);
-
-        *:prelight {
-            .gtk_gradient(@button_hover_gradient_color_a,
-                          @button_hover_gradient_color_b);
-        }
     }
 }
 
@@ -785,7 +787,7 @@ GtkComboBox {
     }
 
     &:insensitive {
-        color: fade(@fg_color, 0.6);
+        color: fade(@fg_color, 60%);
     }
 
     &.menubar {
@@ -833,7 +835,7 @@ GtkComboBox {
             background-color: transparent;
 
             -adwaita-focus-border-radius: 3;
-            -adwaita-focus-fill-color: fade(@base_color, 0.20);
+            -adwaita-focus-fill-color: fade(@base_color, 20%);
 
             .adwaita_gradient(fade(darken(@toolbar_active_button_color, 25%), 90%),
                               fade(@toolbar_active_button_color, 62%));
@@ -895,10 +897,6 @@ GtkSwitch {
 
             .gtk_gradient(@menu_prelight_top, @menu_prelight_bottom);
         }
-
-        &:insensitive {
-            background-color: fade(@bg_color, 90%);
-        }
     }
 
     &.slider {
@@ -916,13 +914,6 @@ GtkSwitch {
 
         &:active {
             border-color: #444;
-        }
-
-        &:insensitive {
-            border-image: none;
-
-            background-image: none;
-            background-color: #eee;
         }
     }
 }
