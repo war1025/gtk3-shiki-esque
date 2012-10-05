@@ -10,8 +10,46 @@
 @insensitive_fg_color: #a7aba7;
 @insensitive_border_color: #444;
 @active_fg_color: #111;
-@border_color: #666;
+@border_color: #5e7f3e;
 @grip_color: #888;
+@entry_color: #444;
+@internal_element_color:    #888a85;
+@internal_element_prelight: @text_color;
+@internal_element_insensitive: lighten(@internal_element_color, 30%);
+@tab_gradient_unselected_color_a: #eee;
+@tab_gradient_unselected_color_b: @bg_color;
+
+@button_gradient_color_a: #f4f6f4;
+@button_gradient_color_b: #d7dad7;
+@button_border:           #a7aba7;
+
+@button_active_gradient_color_a: #a2a9a2;
+@button_active_gradient_color_b: lighten(@button_active_gradient_color_a, 0.06);
+@button_hover_gradient_color_a: @base_color;
+@button_hover_gradient_color_b: lighten(@button_hover_gradient_color_a, 0.06);
+
+@progressbar_background_a: #699240;
+@progressbar_background_b: #465a33;
+@progressbar_pattern:      #222;
+
+@trough_bg_color_a: #888;
+@trough_bg_color_b: #bbb;
+
+@notebook_border: #aaa;
+@notebook_active_tab_border: #aaa;
+@notebook_selected_tab_color: #aaa;
+
+@notebook_tab_gradient_a: #f6f7f6;
+@notebook_tab_gradient_b: #ebeeeb;
+
+
+.adwaita_gradient (@start, @end, @grad2: "left bottom") {
+    -adwaita-border-gradient: ~"-gtk-gradient(linear, left top, @{grad2}, from(@{start}), to(@{end}));"
+}
+
+.gtk_gradient (@start, @end, @grad2: "left bottom") {
+    background-image: ~"-gtk-gradient(linear, left top, @{grad2}, from(@{start}), to(@{end}));"
+}
 
 * {
     engine: adwaita;
@@ -50,17 +88,19 @@
 
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 1;
-    -adwaita-focus-border-color: alpha(@theme_text_color, 0.4);
+    */
+
+    -adwaita-focus-border-color: fade(@text_color, 40%);
     -adwaita-focus-border-radius: 2;
-    -adwaita-focus-fill-color: alpha(@theme_base_color, 0.0);
+    -adwaita-focus-fill-color: fade(@base_color, 0%);
     -adwaita-focus-border-gradient: none;
-    -adwaita-focus-border-dashes: 1;*/
+    -adwaita-focus-border-dashes: 1;
 
     &:hover {
         background-color: #f1f1f1;
     }
 
-    &:selected {
+    &:selected, &:selected:focused {
         background-color: @selected_bg_color;
         color: @selected_fg_color;
     }
@@ -81,7 +121,8 @@ GtkWindow {
     background-color: @bg_color;
 }
 
-.tooltip {
+.tooltip,
+.tooltip * {
     padding: 4px 4px;
     border-style: none;
     background-color: @tooltip_bg_color;
@@ -96,7 +137,8 @@ GtkWindow {
     background-color: @grip_color;
 }
 
-.rubberband {
+.rubberband,
+.view.rubberband {
     background-color: fade(@selected_bg_color, 0.35);
 
     border-color: @selected_bg_color;
@@ -115,7 +157,7 @@ GtkWindow {
     background-color: @bg_color;
 
     &:prelight, &:selected {
-        color: #5e7f3e;
+        color: @border_color;
     }
 }
 
@@ -131,3 +173,469 @@ GtkStatusbar {
     border-color: @selected_bg_color;
     border-radius: 2px;
 }
+
+.entry,
+GtkComboBox.combobox-entry .button,
+GtkComboBox.combobox-entry .button:prelight,
+.primary-toolbar GtkComboBox.combobox-entry .button,
+.primary-toolbar GtkComboBox.combobox-entry .button:prelight {
+    .gtk_gradient("@entry_background_a), color-stop(0.20, @entry_background_b), color-stop(0.85, @entry_background_c",
+                  "@entry_background_d");
+}
+
+.entry {
+    background-color: @base_color;
+    border-style: solid;
+    border-width: 1px;
+    border-color: @border_color;
+
+    padding: 4px;
+    /*
+    -GtkEntry-inner-border: 5;
+    -GtkEntry-progress-border: 0;
+    */
+    color: @entry_color;
+
+    &:insensitive {
+        background-color: @insensitive_bg_color;
+        background-image: none;
+
+        border-image: none;
+        border-style: solid;
+    }
+
+    &.progressbar {
+        background-color: @selected_bg_color;
+        color: @selected_fg_color;
+
+        border-width: 1px;
+        border-radius: 3px;
+
+        -adwaita-progressbar-pattern: none;
+    }
+
+    &.image {
+        color: @internal_element_color;
+
+        &:prelight {
+            color: @internal_element_prelight;
+        }
+    }
+}
+
+.spinbutton {
+
+    .button {
+        background-image: none;
+        background-color: transparent;
+
+        border-style: none;
+        border-image: none;
+
+        color: @internal_element_color;
+
+        &:prelight, &:active {
+            color: @internal_element_prelight;
+        }
+
+        &:insensitive {
+            color: @insensitive_border_color;
+        }
+    }
+
+    .entry {
+        padding: 0px 6px 0px 1px;
+    }
+}
+
+.adwaita_progressbar_pattern(@begin, @end) {
+    -adwaita-progressbar-pattern: ~"-gtk-gradient (liner, @{begin}, @{end}, from (alpha (@progressbar_pattern, 0)), color-stop(0.49, alpha (@progressbar_pattern, 0)), color-stop(0.5, alpha(@progressbar_pattern, 0.10)), to(alpha(@progressbar_pattern, 0.1)));"
+}
+
+.progressbar {
+    &, row, row:hover, row:selected, row:focused {
+        .gtk_gradient(@progressbar_background_a,
+                      @progressbar_background_b);
+        border-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #aaa;
+
+        .adwaita_progressbar_pattern("left top", "right bottom");
+    }
+
+    &.vertical {
+        .gtk_gradient(@progressbar_background_a,
+                      @progressbar_background_b,
+                      "right top");
+        .adwaita_progressbar_pattern("left bottom", "right top");
+    }
+}
+
+GtkProgressBar, .trough row {
+    padding: 0px;
+    /*
+    -GtkProgressBar-xspacing: 22;
+    -GtkProgressBar-yspacing: 22;
+    */
+}
+
+.trough {
+    &, row, row:hover {
+        background-color: #bbb;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 3px;
+        border-color: #aaa;
+    }
+
+    &.vertical {
+        .gtk_gradient(@trough_bg_color_a,
+                      @trough_bg_color_b,
+                      "right top");
+    }
+
+    row:selected, row:selected:focused {
+        .gtk_gradient(mix(@trough_bg_color_a, @selected_bg_color, 0.25),
+                      mix(@trough_bg_color_b, @selected_bg_color, 0.25));
+    }
+}
+
+GtkScale {
+    /*
+    -GtkScale-slider-length: 25;
+    -GtkRange-slider-width: 14;
+    -GtkRange-trough-border: 0;
+    */
+
+    &.slider, &.slider:hover, &.slider:insensitive {
+        .gtk_gradient(@button_gradient_color_a,
+                      @button_gradient_color_b);
+        border-width: 1px;
+        border-radius: 3px;
+        border-style: solid;
+        border-color: #888;
+    }
+
+    &.trough {
+        border-width: 1px;
+        border-style: solid;
+        border-color: #aaa;
+        background-color: #d4d9d3;
+        background-image: none;
+
+        &:insensitive {
+            background-color: @insensitive_bg_color;
+
+            border-image: none;
+            border-color: @insensitive_border_color;
+        }
+    }
+
+    &.progressbar {
+        border-radius: 1px;
+        border-style: solid;
+        border-color: #999;
+        border-width: 1px;
+
+        -adwaita-progressbar-pattern: none;
+    }
+
+    &.mark {
+        color: #444;
+    }
+}
+
+.frame {
+    padding: 2px;
+    border-width: 0px;
+}
+
+GtkScrolledWindow.frame {
+    border-style: none;
+    border-color: darken(@bg_color, 5%);
+    border-width: 1px;
+    border-radius: 2px;
+
+    padding: 0px;
+}
+
+.button, .toolbar.button {
+    padding: 0px;
+
+    border-style: solid;
+    border-radius: 2px;
+    border-width: 1px;
+
+    -adwaita-focus-border-radius: 2;
+    -adwaita-focus-border-dashes: 0;
+    .adwaita_gradient(#c2c2c5, #9e9ea2);
+
+    /*
+    -GtkWidget-focus-line-width: 0;
+    */
+    .gtk_gradient(#fbfbfb, #c5c5c9);
+
+    background-color: transparent;
+
+    &:hover {
+        .gtk_gradient(darken(#fbfbfb, 10%), darken(#c5c5c9, 10%));
+
+        &:focused {
+            .adwaita_gradient(#a0a898, #878f7f);
+            .gtk_gradient(#d2dbc6, #aab99a);
+        }
+    }
+
+    &:focused {
+        border-style: solid;
+        border-radius: 2px;
+        border-width: 1px;
+        .adwaita_gradient(#a4aa9e, #8a9184);
+        .gtk_gradient(#dce3d4, #b2bca7);
+
+        &:active, &:active:hover {
+            .adwaita_gradient(#858c7f, #9ca396);
+            .gtk_gradient(#b9c2b1, #a1ab97);
+        }
+    }
+
+    &:insensitive {
+        background-image: none;
+        background-color: @insensitive_bg_color;
+        color: @insensitive_fg_color;
+    }
+
+    &.default {
+        border-color: @border_color;
+    }
+}
+
+.notebook {
+    padding: 3px;
+
+    border-color: #aaa;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+
+    background-color: #eceeec;
+
+    /*
+    -GtkNotebook-tab-overlap: 0;
+    -GtkNotebook-tab-curvature: 2;
+    */
+
+    tab {
+        padding: 5px 3px 0px 3px;
+
+        .gtk_gradient(@tab_gradient_unselected_color_a,
+                      @tab_gradient_unselected_color_b);
+
+
+        -adwaita-focus-border-radius: 4;
+        -adwaita-selected-tab-color: @selected_bg_color;
+
+        color: #444;
+        border-color: #aaa;
+        border-style: solid;
+        border-width: 1px;
+
+        &:active {
+            .adwaita_gradient(@notebook_active_tab_border,
+                              @notebook_border);
+            .gtk_gradient(@notebook_tab_gradient_a,
+                          @notebook_tab_gradient_b);
+            color: #222;
+            border-radius: 4px;
+            border-bottom-color: #444;
+        }
+
+        .button, .button:hover, .button:hover:active {
+            .gtk_gradient(@button_hover_gradient_color_a,
+                          @button_hover_gradient_color_b);
+
+            border-radius: 3px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #999;
+        }
+    }
+}
+
+GtkComboBox {
+    padding: 0px;
+    /*
+    -GtkWidget-focus-padding: 0;
+    -GtkWidget-focus-line-width: 0;
+
+    -GtkComboBox-arrow-scaling: 0.4;
+    -GtkComboBox-shadow-type: none;
+    */
+
+    .serparator {
+        /*
+        -GtkWidget-wide-separators: true;
+        -GtkWidget-horizontal-separator: 0;
+        -GtkWidget-vertical-separator: 0;
+        */
+    }
+
+    .entry {
+        border-width: 1px;
+        border-radius: 3px 0px 0px 3px;
+        border-color: #aaa;
+        border-style: solid;
+    }
+
+    .button {
+        color: #444;
+        padding: 2px 3px 2px 6px;
+        border-radius: 4px;
+        border-width: 1px;
+        border-color: #aaa;
+        border-style: solid;
+        .gtk_gradient(@button_active_gradient_color_a,
+                      @button_active_gradient_color_b);
+
+        *:prelight {
+            border-radius: 0px 4px 4px 0px;
+            border-width: 1px 1px 1px 0px;
+            border-color: #aaa;
+            border-style: solid;
+            .gtk_gradient(@button_hover_gradient_color_a,
+                          @button_hover_gradient_color_b);
+
+            color: #444;
+        }
+    }
+}
+
+.primary-toolbar, * {
+    GtkComboBox.combobox-entry .button {
+        .gtk_gradient(@button_gradient_color_a,
+                      @button_gradient_color_b);
+
+        border-radius: 0px 4px 4px 0px;
+        border-width: 1px 1px 1px 0px;
+        border-color: #aaa;
+        border-style: solid;
+
+        padding: 2px 3px;
+
+        *:active, *:prelight {
+            border-radius: 0px 4px 4px 0px;
+            border-width: 1px 1px 1px 0px;
+            border-color: #aaa;
+            border-style: solid;
+            .gtk_gradient(@button_hover_gradient_color_a,
+                          @button_hover_gradient_color_b);
+            color: #444;
+        }
+
+        &:active, &:hover:active {
+            border-radius: 0px 4px 4px 0px;
+            border-width: 1px 1px 1px 0px;
+            border-color: #aaa;
+            border-style: solid;
+            .gtk_gradient(@button_active_gradient_color_a,
+                          @button_active_gradient_color_b);
+
+        }
+    }
+}
+
+.scrollbar {
+    background-image: none;
+    border-style: solid;
+    /*
+    -GtkRange-trough-border: 0;
+    -GtkRange-arrow-scaling: 0.444;
+    -GtkRange-slider-width: 15;
+    -GtkRange-stepper-size: 15;
+    -GtkScrollbar-min-slider-length: 35;
+
+    -GtkRange-stepper-spacing: 1;
+    -GtkRange-trough-under-steppers: 0;
+    */
+
+    &.vertical {
+        &.trough {
+            background-color: #ddd;
+            border-width: 1px;
+
+            .gtk_gradient(shade(#959596, 1.25),
+                          shade(#959596, 1.45),
+                          "right top");
+            .adwaita_gradient(lighten(#959596, 4%),
+                              lighten(#959596, 15%));
+
+            border-radius: 0px;
+        }
+
+        &.slider, &.button {
+            .gtk_gradient(shade(#dbdbdc, 1.10),
+                          shade(#dbdbdc, 0.95),
+                          "right top");
+            border-color: darken(#959596, 6%);
+            border-radius: 0px;
+            border-width: 1px;
+        }
+
+        &.slider {
+            &:prelight {
+                .gtk_gradient(#dae0d4, #c6cbc1, "right top");
+                border-color: darken(#959596, 10%);
+
+                &:active {
+                    .gtk_gradient(shade(#dbdbdc, 1.10),
+                                  shade(#dbdbdc, 0.95),
+                                  "right top");
+                    border-color: lighten(#959596, 6%);
+                }
+            }
+
+            &:insensitive {
+                background-color: darken(@base_color, 12%);
+            }
+        }
+    }
+
+    &.horizontal {
+        &.trough {
+            .gtk_gradient(shade(#959596, 1.25),
+                          shade(#959596, 1.45));
+            .adwaita_gradient(shade(#959596, 1.04),
+                              shade(#959596, 1.15));
+            border-width: 1px;
+            border-radius: 0px;
+        }
+
+        &.slider, &.button {
+            .gtk_gradient(shade(#dbdbdc, 0.95),
+                          shade(#dbdbdc, 1.10));
+            border-color: darken(#959596, 6%);
+            border-radius: 0px;
+            border-width: 1px;
+        }
+
+        &.slider {
+            &:prelight {
+                .gtk_gradient(#dae0d4, #c6cbc1);
+                border-color: darken(#959596, 10%);
+
+                &:active {
+                    .gtk_gradient(shade(#dbdbdc, 0.95),
+                                  shade(#dbdbdc, 1.10));
+                    border-color: darken(#959596, 6%);
+                }
+            }
+
+            &:insensitive {
+                background-color: darken(@base_color, 12%);
+            }
+        }
+    }
+}
+
+
