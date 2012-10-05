@@ -42,6 +42,18 @@
 @notebook_tab_gradient_a: #f6f7f6;
 @notebook_tab_gradient_b: #ebeeeb;
 
+@menu_prelight_top: #90B958;
+@menu_prelight_bottom: #80A54D;
+
+@menu_bg_color: darken(@bg_color, 0.1);
+@menu_fg_color: @fg_color;
+
+@toolbar_gradient_base: #e5e5e5;
+@toolbar_gradient_step1: #e5e5e5;
+@toolbar_gradient_step2: #d5dad5;
+@toolbar_gradient_final: #d5dad5;
+
+@toolbar_active_button_color: #909081;
 
 .adwaita_gradient (@start, @end, @grad2: "left bottom") {
     -adwaita-border-gradient: ~"-gtk-gradient(linear, left top, @{grad2}, from(@{start}), to(@{end}));"
@@ -638,4 +650,186 @@ GtkComboBox {
     }
 }
 
+.menu {
+    background-color: #e5e5e5;
+    color: @text_color;
+    padding: 0px;
+    border-style: solid;
+    border-color: #333;
+    border-width: 1px;
+}
 
+.menubar {
+    background-color: #e5e5e5;
+    border-color: #333;
+    border-width: 0px;
+    border-style: none;
+    padding: 4px;
+    color: @text_color;
+
+    /*
+    -GtkWidget-window-dragging: true;
+    -GtkMenuBar-internal-padding: 0;
+    */
+
+    .menuitem {
+        border-width: 0px;
+        border-style: none;
+        padding: 3px 5px;
+
+        *:prelight {
+            color: @selected_fg_color;
+        }
+    }
+}
+
+.menuitem {
+    /*
+    -GtkMenuItem-arrow-scaling: 0.4;
+    */
+
+    -adwaita-menuitem-arrow-color: @text_color;
+
+    &:active, &:prelight {
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 0px;
+        border-color: #5f744b;
+    }
+
+    &, * {
+        &:active, &:prelight {
+            .gtk_gradient(@menu_prelight_top,
+                          @menu_prelight_bottom);
+            color: @text_color;
+        }
+
+        &:insensitive {
+            background-color: transparent;
+            color: mix(@menu_fg_color, @menu_bg_color, 0.6);
+        }
+    }
+
+    .accelerator {
+        color: lighten(@text_color, 10%);
+
+        &:insensitive {
+            color: mix(@menu_fg_color, @menu_bg_color, 0.7);
+        }
+    }
+
+    &.separator {
+        color: #292929;
+        text-shadow: #fff 0px 1px 1px;
+
+        /*
+        -GtkSeparatorMenuItem-horizontal-padding: 0;
+        */
+    }
+
+    &.check, &.radio {
+        &, &:insensitive {
+            background-image: none;
+            background-color: transparent;
+        }
+    }
+
+    &.menubar.button {
+        &, * {
+            &:active {
+                color: @text_color;
+                background-image: none;
+                background-color: @menu_bg_color;
+
+                border-radius: 5px 5px 0px 0px;
+                border-image: none;
+                border-width: 1px 1px 0px 1px;
+                border-color: darken(@button_border, 30%);
+                border-style: solid;
+            }
+        }
+    }
+}
+
+.radio, .check {
+    background-color: transparent;
+    border-width: 0px;
+    border-style: none;
+    background-repeat: no-repeat;
+}
+
+.toolbar {
+    border-style: solid;
+    border-color: darken(@bg_color, 10%);
+    border-width: 1px 0px 1px 0px;
+    padding: 4px;
+
+    .button {
+        padding: 2px;
+    }
+
+    &:insensitive {
+        color: fade(@fg_color, 0.6);
+    }
+
+    &.menubar {
+        .gtk_gradient(@bg_color, lighten(@bg_color, 4%));
+
+        border-width: 0px;
+        border-style: none;
+
+        /*
+        -GtkToolbar-button-relief: normal;
+        */
+    }
+}
+
+.primary-toolbar {
+    &.toolbar, .toolbar {
+        .gtk_gradient(@toolbar_gradient_base, @toolbar_gradient_final);
+
+        border-width: 1px 0px 1px 0px;
+        border-radius: 0px;
+        border-style: solid;
+        border-top-color: #ccc;
+        border-bottom-color: #bbb;
+
+        /*
+        -GtkWidget-window-dragging: true;
+        -GtkToolbar-button-relief: normal;
+        */
+
+        &:insensitive {
+            background-image: none;
+            background-color: lighten(@bg_color, 3%);
+
+            border-image: none;
+            border-style: solid;
+            border-color: lighten(@bg_color, 9%);
+        }
+
+        .button {
+            border-style: none;
+            border-image: none;
+            border-radius: 4px;
+
+            background-image: none;
+            background-color: transparent;
+
+            -adwaita-focus-border-radius: 3;
+            -adwaita-focus-fill-color: fade(@base_color, 0.20);
+
+            .adwaita_gradient(fade(darken(@toolbar_active_button_color, 25%), 90%),
+                              fade(@toolbar_active_button_color, 62%));
+
+            * {
+                background-color: transparent;
+            }
+
+            &:hover {
+                .gtk_gradient(@button_hover_gradient_color_a,
+                              @button_hover_gradient_color_b);
+            }
+        }
+    }
+}
