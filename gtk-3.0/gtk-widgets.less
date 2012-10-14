@@ -108,7 +108,7 @@
     -GtkPaned-handle-size: 5;
 
     -GtkCheckButton-indicator-size: 16px;
-    -GtkCheckMenuItem-indicator-size: 18px;*/
+    -GtkCheckMenuItem-indicator-size: 16px;*/
 
     // The size for scrollbars. The slider is 2px smaller, but we keep it
     // up so that the whole area is sensitive to button presses for the
@@ -770,6 +770,7 @@ GtkComboBox {
     border-width: 0px;
     border-style: none;
     background-repeat: no-repeat;
+    background-size: 100% 100%;
 
     &:prelight {
         background-color: transparent;
@@ -847,7 +848,7 @@ GtkComboBox {
             &:hover {
                 .gtk_gradient(fade(lighten(@toolbar_gradient_base, 14%), 70%),
                               fade(lighten(@toolbar_gradient_base, 24%), 0));
-                border-radius: 3px;
+                border-radius: 4px;
                 border-width: 1px;
                 border-style: solid;
                 border-color: #999;
