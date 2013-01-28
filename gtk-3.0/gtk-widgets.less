@@ -472,6 +472,27 @@ GtkScrolledWindow.frame {
     &.default {
         border-color: @border_color;
     }
+
+    .linked & {
+        border-width: 1px 0px 1px 0px;
+        border-radius: 0px;
+
+        &:first-child {
+            border-width: 1px 0px 1px 1px;
+            border-radius: 2px 0px 0px 2px;
+        }
+
+        &:last-child {
+            border-width: 1px 1px 1px 0px;
+            border-radius: 0px 2px 2px 0px;
+        }
+
+        &:only-child {
+            border-width: 1px;
+            border-radius: 2px;
+        }
+
+    }
 }
 
 .notebook {
@@ -606,8 +627,8 @@ GtkComboBox {
             background-color: #ddd;
             border-width: 1px;
 
-            .gtk_gradient(shade(#959596, 1.25),
-                          shade(#959596, 1.45),
+            .gtk_gradient(lighten(#959596, 15%),
+                          lighten(#959596, 26%),
                           right top);
             .adwaita_gradient(lighten(#959596, 4%),
                               lighten(#959596, 15%));
@@ -616,8 +637,8 @@ GtkComboBox {
         }
 
         &.slider, &.button {
-            .gtk_gradient(shade(#dbdbdc, 1.10),
-                          shade(#dbdbdc, 0.95),
+            .gtk_gradient(lighten(#dbdbdc, 8%),
+                          darken(#dbdbdc, 4%),
                           right top);
             border-color: darken(#959596, 6%);
             border-radius: 0px;
@@ -630,8 +651,8 @@ GtkComboBox {
                 border-color: darken(#959596, 10%);
 
                 &:active {
-                    .gtk_gradient(shade(#dbdbdc, 1.10),
-                                  shade(#dbdbdc, 0.95),
+                    .gtk_gradient(lighten(#dbdbdc, 8%),
+                                  darken(#dbdbdc, 4%),
                                   right top);
                     border-color: lighten(#959596, 6%);
                 }
@@ -645,17 +666,17 @@ GtkComboBox {
 
     &.horizontal {
         &.trough {
-            .gtk_gradient(shade(#959596, 1.25),
-                          shade(#959596, 1.45));
-            .adwaita_gradient(shade(#959596, 1.04),
-                              shade(#959596, 1.15));
+            .gtk_gradient(lighten(#959596, 15%),
+                          lighten(#959596, 26%));
+            .adwaita_gradient(lighten(#959596, 4%),
+                              lighten(#959596, 15%));
             border-width: 1px;
             border-radius: 0px;
         }
 
         &.slider, &.button {
-            .gtk_gradient(shade(#dbdbdc, 0.95),
-                          shade(#dbdbdc, 1.10));
+            .gtk_gradient(lighten(#dbdbdc, 8%),
+                          darken(#dbdbdc, 4%));
             border-color: darken(#959596, 6%);
             border-radius: 0px;
             border-width: 1px;
@@ -667,8 +688,8 @@ GtkComboBox {
                 border-color: darken(#959596, 10%);
 
                 &:active {
-                    .gtk_gradient(shade(#dbdbdc, 0.95),
-                                  shade(#dbdbdc, 1.10));
+                    .gtk_gradient(lighten(#dbdbdc, 8%),
+                                  darken(#dbdbdc, 4%));
                     border-color: darken(#959596, 6%);
                 }
             }
@@ -709,6 +730,15 @@ GtkComboBox {
 
         *:prelight {
             color: @selected_fg_color;
+        }
+
+        &.separator {
+            color: #292929;
+            text-shadow: #fff 0px 1px 1px;
+
+            /*
+            -GtkSeparatorMenuItem-horizontal-padding: 0;
+            */
         }
     }
 }

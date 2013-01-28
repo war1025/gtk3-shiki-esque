@@ -309,6 +309,26 @@ GtkScrolledWindow.frame {
 .toolbar.button.default {
   border-color: #5e7f3e;
 }
+.linked .button,
+.linked .toolbar.button {
+  border-width: 1px 0px 1px 0px;
+  border-radius: 0px;
+}
+.linked .button:first-child,
+.linked .toolbar.button:first-child {
+  border-width: 1px 0px 1px 1px;
+  border-radius: 2px 0px 0px 2px;
+}
+.linked .button:last-child,
+.linked .toolbar.button:last-child {
+  border-width: 1px 1px 1px 0px;
+  border-radius: 0px 2px 2px 0px;
+}
+.linked .button:only-child,
+.linked .toolbar.button:only-child {
+  border-width: 1px;
+  border-radius: 2px;
+}
 .notebook {
   padding: 3px;
   border-color: #aaa;
@@ -421,13 +441,13 @@ GtkComboBox .button {
 .scrollbar.vertical.trough {
   background-color: #ddd;
   border-width: 1px;
-  background-image: -gtk-gradient(linear, left top, right top, from(shade(#959596, 1.25)), to(shade(#959596, 1.45)));
+  background-image: -gtk-gradient(linear, left top, right top, from(#bbbbbc), to(#d8d8d8));
   -adwaita-border-gradient: -gtk-gradient(linear, left top, left bottom, from(#9f9fa0), to(#bbbbbc));
   border-radius: 0px;
 }
 .scrollbar.vertical.slider,
 .scrollbar.vertical.button {
-  background-image: -gtk-gradient(linear, left top, right top, from(shade(#dbdbdc, 1.1)), to(shade(#dbdbdc, 0.95)));
+  background-image: -gtk-gradient(linear, left top, right top, from(#f0f0f0), to(#d1d1d2));
   border-color: #868687;
   border-radius: 0px;
   border-width: 1px;
@@ -437,21 +457,21 @@ GtkComboBox .button {
   border-color: #7b7b7d;
 }
 .scrollbar.vertical.slider:prelight:active {
-  background-image: -gtk-gradient(linear, left top, right top, from(shade(#dbdbdc, 1.1)), to(shade(#dbdbdc, 0.95)));
+  background-image: -gtk-gradient(linear, left top, right top, from(#f0f0f0), to(#d1d1d2));
   border-color: #a4a4a5;
 }
 .scrollbar.vertical.slider:insensitive {
   background-color: #e0e0e0;
 }
 .scrollbar.horizontal.trough {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#959596, 1.25)), to(shade(#959596, 1.45)));
-  -adwaita-border-gradient: -gtk-gradient(linear, left top, left bottom, from(shade(#959596, 1.04)), to(shade(#959596, 1.15)));
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#bbbbbc), to(#d8d8d8));
+  -adwaita-border-gradient: -gtk-gradient(linear, left top, left bottom, from(#9f9fa0), to(#bbbbbc));
   border-width: 1px;
   border-radius: 0px;
 }
 .scrollbar.horizontal.slider,
 .scrollbar.horizontal.button {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#dbdbdc, 0.95)), to(shade(#dbdbdc, 1.1)));
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#f0f0f0), to(#d1d1d2));
   border-color: #868687;
   border-radius: 0px;
   border-width: 1px;
@@ -461,7 +481,7 @@ GtkComboBox .button {
   border-color: #7b7b7d;
 }
 .scrollbar.horizontal.slider:prelight:active {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(shade(#dbdbdc, 0.95)), to(shade(#dbdbdc, 1.1)));
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#f0f0f0), to(#d1d1d2));
   border-color: #868687;
 }
 .scrollbar.horizontal.slider:insensitive {
@@ -495,6 +515,14 @@ GtkComboBox .button {
 }
 .menubar .menuitem *:prelight {
   color: #ffffff;
+}
+.menubar .menuitem.separator {
+  color: #292929;
+  text-shadow: #fff 0px 1px 1px;
+  
+            -GtkSeparatorMenuItem-horizontal-padding: 0;
+            
+
 }
 .menuitem {
   
