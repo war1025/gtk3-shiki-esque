@@ -8,10 +8,34 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="16"
    height="16"
-   id="svg814">
+   id="svg814"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="checkbox-mixed.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     id="namedview21"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="-0.44067797"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg814" />
   <defs
      id="defs816">
     <linearGradient
@@ -63,12 +87,12 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0,-1036.3622)"
+     transform="translate(-23.186441,-1030.3283)"
      id="layer1">
     <g
        id="g3825">
@@ -117,4 +141,28 @@
          style="color:#000000;fill:#ffffff;fill-opacity:0.98823529;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     </g>
   </g>
+  <rect
+     style="fill:#74a246;fill-opacity:1;stroke:#393939;stroke-width:0.92685711;stroke-opacity:1"
+     id="rect3004"
+     width="12.818905"
+     height="12.818905"
+     x="1.5905476"
+     y="1.5905476"
+     ry="1.7655387" />
+  <rect
+     style="fill:#648642;fill-opacity:1;stroke:none"
+     id="rect3776"
+     width="9.8305082"
+     height="9.8305082"
+     x="3.0847459"
+     y="3.0847459"
+     ry="0.97883642" />
+  <rect
+     style="fill:#ffffff;fill-opacity:1;stroke:none"
+     id="rect3031"
+     width="8.4067793"
+     height="2.9319999"
+     x="3.7966104"
+     y="6.5339999"
+     ry="1.466" />
 </svg>

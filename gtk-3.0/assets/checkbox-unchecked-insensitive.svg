@@ -14,8 +14,8 @@
    height="16"
    id="svg814"
    version="1.1"
-   inkscape:version="0.48+devel r10053 custom"
-   sodipodi:docname="checkbox-checked-insensitive.svg">
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="checkbox-unchecked-insensitive.svg">
   <defs
      id="defs816">
     <linearGradient
@@ -93,17 +93,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="32"
-     inkscape:cx="7.1381674"
+     inkscape:cx="3.2475424"
      inkscape:cy="8.4772276"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      borderlayer="true"
      inkscape:showpageshadow="false"
      inkscape:window-width="981"
-     inkscape:window-height="899"
-     inkscape:window-x="1600"
-     inkscape:window-y="0"
+     inkscape:window-height="709"
+     inkscape:window-x="383"
+     inkscape:window-y="27"
      inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
@@ -121,7 +121,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -130,20 +130,13 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-1036.3622)">
-    <g
-       style="opacity:0.5;enable-background:new"
-       id="g16895"
-       transform="translate(410.00739,765.05452)">
-      <rect
-         ry="1.6105907"
-         rx="1.6105907"
-         y="-284.86218"
-         x="-409.50739"
-         height="11.023263"
-         width="11.042357"
-         id="rect16897"
-         style="color:#000000;fill:none;stroke:url(#linearGradient8390);stroke-width:1;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-         transform="scale(1,-1)" />
-    </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#c8cdc3;stroke-width:0.92685711;stroke-opacity:1"
+       id="rect3004"
+       width="12.818905"
+       height="12.818905"
+       x="1.5905476"
+       y="1037.9528"
+       ry="1.7655387" />
   </g>
 </svg>

@@ -14,8 +14,8 @@
    height="16"
    id="svg814"
    version="1.1"
-   inkscape:version="0.48+devel r10053 custom"
-   sodipodi:docname="checkbox-unchecked.svg">
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="checkbox-checked-insensitive.svg">
   <defs
      id="defs816">
     <linearGradient
@@ -112,19 +112,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="32"
-     inkscape:cx="7.1381674"
-     inkscape:cy="8.4772276"
+     inkscape:zoom="22.627417"
+     inkscape:cx="7.3499173"
+     inkscape:cy="7.1234295"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="true"
+     showgrid="false"
      borderlayer="true"
      inkscape:showpageshadow="false"
-     inkscape:window-width="981"
-     inkscape:window-height="899"
-     inkscape:window-x="1600"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0">
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1">
     <inkscape:grid
        type="xygrid"
        id="grid4084"
@@ -141,7 +141,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -153,7 +153,7 @@
     <g
        style="opacity:0.5;enable-background:new"
        id="g16895"
-       transform="translate(410.00739,765.05452)">
+       transform="translate(391.44584,764.87774)">
       <rect
          ry="1.6105907"
          rx="1.6105907"
@@ -171,5 +171,26 @@
          sodipodi:nodetypes="ccc"
          inkscape:connector-curvature="0" />
     </g>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#c8cdc3;stroke-width:0.92685711000000004;stroke-opacity:1"
+       id="rect3004"
+       width="12.818905"
+       height="12.818905"
+       x="1.5905476"
+       y="1037.9528"
+       ry="1.7655387" />
+    <rect
+       style="fill:#c8cdc3;fill-opacity:1;stroke:none"
+       id="rect3776"
+       width="9.8305082"
+       height="9.8305082"
+       x="3.0847459"
+       y="1039.4469"
+       ry="0.97883642" />
+    <path
+       d="m 3.823202,1045.8807 3.24862,3.0345 c 0,0 0.285912,-2.0843 2.320444,-5.6022 2.14946,-3.7166 2.784532,-3.5014 2.784532,-3.5014"
+       id="path4085"
+       style="fill:none;stroke:#ffffff;stroke-width:1.39640355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

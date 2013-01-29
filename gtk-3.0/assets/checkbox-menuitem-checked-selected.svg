@@ -8,10 +8,34 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    width="16"
    height="16"
-   id="svg814">
+   id="svg814"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="checkbox-checked.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="-5.7638258"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg814" />
   <defs
      id="defs816">
     <linearGradient
@@ -42,49 +66,59 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     transform="translate(0,-1036.3622)"
-     id="layer1">
-    <g
-       id="g4087">
-      <g
-         transform="translate(410.13239,765.00002)"
-         id="g16853"
-         style="enable-background:new">
-        <rect
-           width="11.042357"
-           height="11.023263"
-           rx="1.6105907"
-           ry="1.6105907"
-           x="-409.50739"
-           y="-284.86218"
-           transform="scale(1,-1)"
-           id="rect6506"
-           style="color:#000000;fill:#5f813e;fill-opacity:1;fill-rule:nonzero;stroke:#4c4c4c;stroke-width:1;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-      </g>
-      <g
-         transform="matrix(0.85375452,0,0,0.87618051,351.17623,799.33906)"
-         id="g4081"
-         style="fill:none;stroke:#82b651;stroke-opacity:0.68446601;enable-background:new">
-        <rect
-           width="11.042357"
-           height="11.023263"
-           rx="1.6105907"
-           ry="1.6105907"
-           x="-409.50739"
-           y="-284.86218"
-           transform="scale(1,-1)"
-           id="rect4083"
-           style="color:#000000;fill:none;stroke:#82b651;stroke-width:1;stroke-opacity:0.68446601;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
-      </g>
-      <path
-         d="m 2.8232017,1044.6295 3.2486208,3.0345 c 0,0 0.2859113,-2.0843 2.3204435,-5.6022 2.14946,-3.7166 2.784532,-3.5014 2.784532,-3.5014"
-         id="path4085"
-         style="fill:none;stroke:#ffffff;stroke-width:1.39640355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-    </g>
+     transform="translate(389.9968,-263.09098)"
+     id="g16853"
+     style="enable-background:new">
+    <rect
+       width="11.042357"
+       height="11.023263"
+       rx="1.6105907"
+       ry="1.6105907"
+       x="-409.50739"
+       y="-284.86218"
+       transform="scale(1,-1)"
+       id="rect6506"
+       style="color:#000000;fill:#5f813e;fill-opacity:1;fill-rule:nonzero;stroke:#4c4c4c;stroke-width:1;stroke-opacity:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
   </g>
+  <g
+     transform="matrix(0.85375452,0,0,0.87618051,331.04064,-228.75194)"
+     id="g4081"
+     style="fill:none;stroke:#82b651;stroke-opacity:0.68446601;enable-background:new">
+    <rect
+       width="11.042357"
+       height="11.023263"
+       rx="1.6105907"
+       ry="1.6105907"
+       x="-409.50739"
+       y="-284.86218"
+       transform="scale(1,-1)"
+       id="rect4083"
+       style="color:#000000;fill:none;stroke:#82b651;stroke-width:1;stroke-opacity:0.68446601;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+  </g>
+  <rect
+     style="fill:#74a246;fill-opacity:1;stroke:#393939;stroke-width:0.92685711;stroke-opacity:1"
+     id="rect3004"
+     width="12.818905"
+     height="12.818905"
+     x="1.5905476"
+     y="1.5905476"
+     ry="1.7655387" />
+  <rect
+     style="fill:#648642;fill-opacity:1;stroke:none"
+     id="rect3776"
+     width="9.8305082"
+     height="9.8305082"
+     x="3.0847459"
+     y="3.0847459"
+     ry="0.97883642" />
+  <path
+     d="m 4.3147266,8.1995171 3.24862,3.0344999 c 0,0 0.285912,-2.0842999 2.320444,-5.6022 2.1494604,-3.7166 2.7845324,-3.5014 2.7845324,-3.5014"
+     id="path4085"
+     style="fill:none;stroke:#ffffff;stroke-width:1.39640355;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0" />
 </svg>

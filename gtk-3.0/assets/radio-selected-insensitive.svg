@@ -14,8 +14,8 @@
    height="16"
    id="svg814"
    version="1.1"
-   inkscape:version="0.48+devel r10053 custom"
-   sodipodi:docname="radio-unselected.svg">
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="radio-selected-insensitive.svg">
   <defs
      id="defs816">
     <linearGradient
@@ -191,18 +191,18 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="22.627417"
-     inkscape:cx="7.2871964"
+     inkscape:cx="-0.53517237"
      inkscape:cy="8.5766833"
      inkscape:document-units="px"
      inkscape:current-layer="g6305"
-     showgrid="true"
+     showgrid="false"
      borderlayer="true"
      inkscape:showpageshadow="false"
-     inkscape:window-width="1180"
-     inkscape:window-height="950"
-     inkscape:window-x="1600"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-width="1366"
+     inkscape:window-height="713"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
      inkscape:snap-nodes="false"
      inkscape:snap-bbox="true">
     <inkscape:grid
@@ -221,7 +221,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -237,7 +237,7 @@
       <g
          style="opacity:0.5;display:inline;enable-background:new"
          id="g16917"
-         transform="translate(3.7481965e-5,-1.1707725e-5)">
+         transform="translate(-19.975729,-1.1490602)">
         <path
            sodipodi:type="arc"
            style="color:#000000;fill:none;stroke:url(#linearGradient8392);stroke-width:0.88215655;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:100;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:new"
@@ -259,6 +259,26 @@
            style="color:#000000;fill:#8f9985;fill-opacity:1;fill-rule:nonzero;stroke:#8f9985;stroke-width:1.64175236;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:144.44521581;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
            sodipodi:type="arc" />
       </g>
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:#c8cdc3;stroke-width:1.02100002999999995;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:9.96447681999999979"
+         id="path3030"
+         sodipodi:cx="-10.847458"
+         sodipodi:cy="8.8813562"
+         sodipodi:rx="6.3728814"
+         sodipodi:ry="6.3728814"
+         d="m -4.4745765,8.8813562 a 6.3728814,6.3728814 0 1 1 -12.7457625,0 6.3728814,6.3728814 0 1 1 12.7457625,0 z"
+         transform="translate(1049.8475,265.11863)" />
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;stroke:#c8cdc3;stroke-width:2.42099999999999982;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:9.96447681999999979"
+         id="path3800"
+         sodipodi:cx="-26.745762"
+         sodipodi:cy="2.7457628"
+         sodipodi:rx="3.6949153"
+         sodipodi:ry="3.6949153"
+         d="m -23.050847,2.7457628 a 3.6949153,3.6949153 0 1 1 -7.38983,0 3.6949153,3.6949153 0 1 1 7.38983,0 z"
+         transform="translate(1065.7458,271.25423)" />
     </g>
   </g>
 </svg>
