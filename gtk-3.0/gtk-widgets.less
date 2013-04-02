@@ -772,6 +772,8 @@ GtkComboBox {
     &.separator {
         color: #292929;
         text-shadow: #fff 0px 1px 1px;
+        background-color: none;
+        padding: 0px;
 
         /*
         -GtkSeparatorMenuItem-horizontal-padding: 0;
@@ -1017,5 +1019,21 @@ row {
             .gtk_gradient(lighten(@menu_prelight_top, 15%),
                           lighten(@menu_prelight_bottom, 15%));
         }
+    }
+}
+
+
+.osd {
+
+    GtkOverlay& {
+        background-color: transparent;
+    }
+
+    &.trough {
+        background-color: @selected_fg_color;
+    }
+
+    &.progressbar {
+        background-color: @selected_bg_color;
     }
 }
