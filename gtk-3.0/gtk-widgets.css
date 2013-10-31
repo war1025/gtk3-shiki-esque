@@ -69,9 +69,6 @@ GtkWindow {
   background-color: transparent;
   border-style: none;
 }
-.grip {
-  background-color: #888888;
-}
 .rubberband,
 .view.rubberband {
   background-color: rgba(151, 191, 96, 0.35);
