@@ -28,6 +28,9 @@
 
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 1;
+
+    -GtkWindow-resize-grip-width: 0;
+    -GtkWindow-resize-grip-height: 0;
     
 
   -adwaita-focus-border-color: rgba(26, 26, 26, 0.4);
@@ -754,4 +757,42 @@ GtkOverlay.osd {
 }
 .osd.progressbar {
   background-color: #97bf60;
+}
+.header-bar {
+  background-color: #4E4941;
+  color: #e5e5e5;
+  padding: 3px 3px 2px 3px;
+}
+.header-bar .title {
+  font: Bold 11;
+}
+.header-bar .subtitle {
+  font: 9;
+}
+.header-bar .button {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#4d4840), to(#4f4a42));
+  border-color: #000;
+}
+.header-bar .button:hover {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#6a6358), to(#6a6358));
+}
+.header-bar .button:focused {
+  border-style: solid;
+  border-radius: 2px;
+  border-width: 1px;
+}
+.header-bar .button:insensitive {
+  background-image: none;
+  background-color: rgba(244, 244, 242, 0.3);
+  color: #444444;
+}
+.header-bar .button:active,
+.header-bar .button:active:focused {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#90b958), to(#80a54d));
+}
+.header-bar .button:active:hover {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#a8c87c), to(#99ba6b));
+}
+.header-bar .button:active:insensitive {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#ccdfb2), to(#bdd29f));
 }

@@ -133,6 +133,9 @@
 
     -GtkWidget-focus-padding: 2;
     -GtkWidget-focus-line-width: 1;
+
+    -GtkWindow-resize-grip-width: 0;
+    -GtkWindow-resize-grip-height: 0;
     */
 
     -adwaita-focus-border-color: fade(@text_color, 40%);
@@ -1036,4 +1039,58 @@ row {
     &.progressbar {
         background-color: @selected_bg_color;
     }
+}
+
+.header-bar {
+   .title {
+      font: Bold 11;
+   }
+
+   .subtitle {
+      font : 9;
+   }
+
+   .button {
+      .gtk_gradient(darken(#4E4941, 0.4), lighten(#4E4941, 0.5));
+
+      border-color: #000;
+
+      &:hover {
+          .gtk_gradient(lighten(#4E4941, 10%), lighten(#4E4941, 10%));
+      }
+
+      &:focused {
+          border-style: solid;
+          border-radius: 2px;
+          border-width: 1px;
+      }
+
+      &:insensitive {
+          background-image: none;
+          background-color: @insensitive_bg_color;
+          color: @insensitive_fg_color;
+      }
+
+      &:active {
+         &, &:focused {
+            .gtk_gradient(@menu_prelight_top, @menu_prelight_bottom);
+         }
+
+         &:hover {
+            .gtk_gradient(lighten(@menu_prelight_top, 10%),
+                          lighten(@menu_prelight_bottom, 10%));
+         }
+
+         &:insensitive {
+            .gtk_gradient(lighten(@menu_prelight_top, 25%),
+                          lighten(@menu_prelight_bottom, 25%));
+         }
+      }
+   }
+
+   background-color: #4E4941;
+   color: #e5e5e5;
+
+   padding: 3px 3px 2px 3px;
+
 }
